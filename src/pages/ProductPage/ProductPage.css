@@ -1,0 +1,10 @@
+.container{
+    padding-top: 20px;
+    width: auto;
+    padding-left: 70px;
+}
+.pr{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
