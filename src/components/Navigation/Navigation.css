@@ -177,3 +177,19 @@ input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
 .Sidemenu.active{
     transform: translateX(100%);
 }
+.Cartmenu{
+    height: 100%;
+    width: 370px;
+    position: fixed;
+    right: -370px;
+    background-color: rgb(231, 228, 228);
+    margin-right: 0px;
+    margin-top: 107px;
+    z-index: 1;
+    transition: transform 0.4s linear;
+
+   
+}
+.Cartmenu.active{
+    transform: translateX(-100%);
+}

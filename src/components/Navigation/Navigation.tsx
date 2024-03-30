@@ -4,8 +4,10 @@ import imgA from '../../ui/actor.png'
 import imgC from '../../ui/cart.png'
 import { useState } from 'react'
 import { SideMenu } from '../SideMenu/SideMenu'
+import { CartMenu } from '../../pages/CartPage/CartMenu'
 export function Navigation(){
-    const [isOpen, setIsOpen] = useState(false)
+    const [isSideMenuOpen, setIsSideMenuOpen] = useState(false)
+    const [isCartMenuOpen, setIsCartMenuOpen] = useState(false)
 
     return(
         <header className="header">
@@ -33,11 +35,11 @@ export function Navigation(){
                 </div>
                     <div className='header_bottom'>
                     <div className='header_l'>
-                        <span className="title">WILDBERRIES</span>
+                        <span className="title" >WILDBERRIES</span>
                         
                         <button 
                         className='but_menu'
-                        onClick={()=>setIsOpen(!isOpen)}
+                        onClick={()=>setIsSideMenuOpen(!isSideMenuOpen)}
                         ><input className="checkbox" type="checkbox" name="" id="" /><div className="hamburger-lines">
                         <span className="line line1"></span>
                         <span className="line line2"></span>
@@ -59,14 +61,17 @@ export function Navigation(){
                             </a>
                             <a className='h_but_items'>
                                 <img className='imgBut' src={imgC} width={30} height={30}  alt='' />
-                                <button className='nameBut'>Корзина</button>
+                                <button className='nameBut'  onClick={()=>setIsCartMenuOpen(!isCartMenuOpen)}>Корзина</button>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-        <div className={`Sidemenu ${isOpen ? "active" : ""}`}>
+        <div className={`Sidemenu ${isSideMenuOpen ? "active" : ""}`}>
             <SideMenu />
+        </div>
+        <div className={`Cartmenu ${isCartMenuOpen ? "active" : ""}`}>
+            <CartMenu />
         </div>
         </header>
     )

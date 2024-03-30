@@ -107,6 +107,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.product-category-j{
+    font-size: 16px;
+    font-weight: 700;
+}
 .product-rating-j{
     padding-top: 10px;
     font-size: 18px;
